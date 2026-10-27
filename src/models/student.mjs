@@ -29,6 +29,11 @@ const studentSchema = new mongoose.Schema(
       type: Date,
       required: [true, 'Course started date is required'],
     },
+    idNumber: {
+      type: String,
+      trim: true,
+      default: '',
+    },
     status: {
       type: String,
       enum: {
@@ -42,6 +47,11 @@ const studentSchema = new mongoose.Schema(
       trim: true,
       default: '',
     },
+    phone: {
+      type: String,
+      trim: true,
+      default: '',
+    },
     email: {
       type: String,
       trim: true,
@@ -49,6 +59,11 @@ const studentSchema = new mongoose.Schema(
       default: '',
     },
     academicYear: {
+      type: String,
+      trim: true,
+      default: '',
+    },
+    batch: {
       type: String,
       trim: true,
       default: '',

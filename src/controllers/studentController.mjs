@@ -12,10 +12,13 @@ export const createStudent = async (req, res, next) => {
       nic,
       course,
       courseStartedDate,
+      idNumber,
       status,
       contactNo,
+      phone,
       email,
       academicYear,
+      batch,
     } = req.body;
 
     // Check if student with same regNo already exists
@@ -33,10 +36,13 @@ export const createStudent = async (req, res, next) => {
       nic,
       course,
       courseStartedDate,
+      idNumber,
       status,
       contactNo,
+      phone,
       email,
       academicYear,
+      batch,
     });
 
     res.status(201).json({

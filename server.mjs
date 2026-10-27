@@ -7,9 +7,6 @@ import studentRoutes from './src/routes/studentRoutes.mjs';
 const app = express();
 const port = process.env.PORT || 3000;
 
-// Connect to MongoDB Atlas
-connectDB();
-
 // Global Middlewares
 app.use(cors());
 app.use(express.json());
@@ -81,6 +78,8 @@ app.use((err, req, res, next) => {
     ...(process.env.NODE_ENV === 'development' && { stack: err.stack }),
   });
 });
+
+await connectDB();
 
 app.listen(port, () => {
   console.log(`ATI System Server running on http://localhost:${port}`);
